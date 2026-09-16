@@ -1,8 +1,8 @@
 <div align="center">
 
-![new-api](/web/public/logo.png)
+![Token Center](/web/public/logo.png)
 
-# New API
+# Token Center
 
 **Une passerelle IA pour les modèles, les applications et les agents**
 
@@ -12,35 +12,6 @@
   <a href="./README.md">English</a> |
   <strong>Français</strong> |
   <a href="./README.ja.md">日本語</a>
-</p>
-
-<p align="center">
-  <a href="https://raw.githubusercontent.com/Calcium-Ion/new-api/main/LICENSE">
-    <img src="https://img.shields.io/github/license/Calcium-Ion/new-api?color=brightgreen" alt="licence">
-  </a><!--
-  --><a href="https://github.com/Calcium-Ion/new-api/releases/latest">
-    <img src="https://img.shields.io/github/v/release/Calcium-Ion/new-api?color=brightgreen&include_prereleases" alt="version">
-  </a><!--
-  --><a href="https://hub.docker.com/r/CalciumIon/new-api">
-    <img src="https://img.shields.io/badge/docker-dockerHub-blue" alt="docker">
-  </a>
-  <a href="https://atomgit.com/QuantumNous/new-api" target="_blank">
-    <img alt="AtomGit G-Star" src="https://atomgit.com/QuantumNous/new-api/star/badge.svg"/>
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://trendshift.io/repositories/20180" target="_blank">
-    <img src="https://trendshift.io/api/badge/repositories/20180" alt="QuantumNous%2Fnew-api | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
-  </a>
-  <br>
-  <a href="https://hellogithub.com/repository/QuantumNous/new-api" target="_blank">
-    <img src="https://api.hellogithub.com/v1/widgets/recommend.svg?rid=539ac4217e69431684ad4a0bab768811&claim_uid=tbFPfKIDHpc4TzR" alt="Featured｜HelloGitHub" style="width: 250px; height: 54px;" width="250" height="54" />
-  </a><!--
-  -->
-  <a href="https://atomgit.com/QuantumNous/new-api" target="_blank">
-    <img alt="AtomGit G-Star" src="https://atomgit.com/QuantumNous/new-api/star/new_badge.svg" width="250" height="55" />
-  </a>
 </p>
 
 <p align="center">
@@ -57,7 +28,7 @@
 
 ## 📝 Description du projet
 
-New API est une passerelle IA auto-hébergée pour les applications, les agents et les équipes. Connectez vos fournisseurs de modèles, exposez une API commune à vos clients et gérez le routage, les accès, les usages et les coûts depuis une même console.
+Token Center est une passerelle IA auto-hébergée pour les applications, les agents et les équipes. Connectez vos fournisseurs de modèles, exposez une API commune à vos clients et gérez le routage, les accès, les usages et les coûts depuis une même console.
 
 Utilisez-la pour partager des accès autorisés au sein d'une équipe, changer de fournisseur sans reconfigurer chaque client ou exploiter un service privé multi-modèles. Les fournisseurs incluent OpenAI, Anthropic, Google Gemini, Azure OpenAI, AWS Bedrock, Vertex AI, DeepSeek, Qwen et d'autres services compatibles.
 
@@ -167,7 +138,7 @@ Ouvrez [http://localhost:3000](http://localhost:3000) et suivez l'assistant pour
 1. Ajoutez un canal avec votre clé API amont, ses modèles et son groupe, puis lancez un test du canal.
 2. Configurez les prix des modèles et vérifiez que l'utilisateur dispose d'un quota ou d'un abonnement valide.
 3. Créez une clé API dans la console, autorisée à accéder au même groupe et aux mêmes modèles.
-4. Pour un client compatible OpenAI, utilisez `http://localhost:3000/v1` comme URL de base et la **clé émise par New API**.
+4. Pour un client compatible OpenAI, utilisez `http://localhost:3000/v1` comme URL de base et la **clé émise par Token Center**.
 
 Définissez `NEW_API_KEY` dans votre shell avec cette clé, puis listez les modèles accessibles :
 
@@ -191,10 +162,10 @@ curl --fail-with-body http://localhost:3000/v1/responses \
 
 ### Docker Compose
 
-La [configuration Compose](./docker-compose.yml) du dépôt démarre **New API + PostgreSQL + Redis** par défaut. Elle contient aussi des exemples pour MySQL et une base de journaux ClickHouse distincte.
+La [configuration Compose](./docker-compose.yml) du dépôt démarre **Token Center + PostgreSQL + Redis** par défaut. Elle contient aussi des exemples pour MySQL et une base de journaux ClickHouse distincte.
 
 ```bash
-git clone https://github.com/QuantumNous/new-api.git
+git clone <your-repo-url>
 cd new-api
 ```
 
@@ -299,7 +270,6 @@ Pour signaler un bug, indiquez la version, le déploiement, les étapes de repro
 | Projet | Description |
 |------|------|
 | [new-api-key-tool](https://github.com/Calcium-Ion/new-api-key-tool) | Outil de recherche de quota d'utilisation avec une clé |
-| [new-api-horizon](https://github.com/Calcium-Ion/new-api-horizon) | Version optimisée haute performance de New API |
 
 ---
 
@@ -307,34 +277,8 @@ Pour signaler un bug, indiquez la version, le déploiement, les étapes de repro
 
 Ce projet est sous licence [GNU Affero General Public License v3.0 (AGPLv3)](./LICENSE).
 
-Des [conditions supplémentaires](./NOTICE) s'appliquent au titre de la section 7 de l'AGPLv3. Les versions modifiées doivent conserver la mention `Frontend design and development by New API contributors.` dans les mentions légales appropriées et les emplacements visibles de l'interface dédiés aux informations, au droit, au pied de page ou aux attributions, ainsi qu'un lien visible vers le projet original : <https://github.com/QuantumNous/new-api>.
-
 Il s'agit d'un projet open-source développé sur la base de [One API](https://github.com/songquanpeng/one-api) (licence MIT).
-
-Si les politiques de votre organisation ne permettent pas l'utilisation de logiciels sous licence AGPLv3, ou si vous souhaitez éviter les obligations open-source de l'AGPLv3, veuillez nous contacter à : [support@quantumnous.com](mailto:support@quantumnous.com)
 
 Consultez [NOTICE](./NOTICE) et les [licences tierces](./THIRD-PARTY-LICENSES.md) pour les attributions et les dépendances.
 
 ---
-
-## 🌟 Historique des étoiles
-
-<div align="center">
-
-[![Graphique de l'historique des étoiles](https://api.star-history.com/svg?repos=Calcium-Ion/new-api&type=Date)](https://star-history.com/#Calcium-Ion/new-api&Date)
-
-</div>
-
----
-
-<div align="center">
-
-### 💖 Merci d'utiliser New API
-
-Si ce projet vous est utile, bienvenue à nous donner une ⭐️ Étoile！
-
-**[Documentation officielle](https://docs.newapi.ai/en/docs)** • **[Commentaires sur les problèmes](https://github.com/Calcium-Ion/new-api/issues)** • **[Dernière version](https://github.com/Calcium-Ion/new-api/releases)**
-
-<sub>Construit avec ❤️ par QuantumNous</sub>
-
-</div>

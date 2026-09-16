@@ -1,5 +1,4 @@
 /*
-Copyright (C) 2023-2026 QuantumNous
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -14,7 +13,6 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-For commercial licensing, please contact support@quantumnous.com
 */
 
 export const CHANNEL_PRIORITY_GUIDE_KEYS = {
@@ -172,7 +170,7 @@ export const CHANNEL_PROVIDER_PRESENTATION: Partial<
     descriptionKey:
       'Configure endpoint routing, authentication and protocol conversion for different upstream services',
     detailKey:
-      "New API's flexible channel lets you configure upstream addresses and authentication per endpoint, choose native forwarding or supported protocol conversions, and configure model listing and balance queries independently",
+      "Token Center's flexible channel lets you configure upstream addresses and authentication per endpoint, choose native forwarding or supported protocol conversions, and configure model listing and balance queries independently",
     badge: { labelKey: 'Flexible integration', tone: 'primary' },
   },
   59: { descriptionKey: 'Connect to model services through a Sub2API gateway' },

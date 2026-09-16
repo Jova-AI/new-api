@@ -1,5 +1,4 @@
 /*
-Copyright (C) 2023-2026 QuantumNous
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -14,7 +13,6 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-For commercial licensing, please contact support@quantumnous.com
 */
 import fs from 'node:fs/promises'
 import path from 'node:path'
@@ -66,8 +64,7 @@ const BRAND_AND_LITERAL_KEYS = new Set([
   'Mistral',
   'MokaAI',
   'Moonshot',
-  'New API',
-  'New API &lt;noreply@example.com&gt;',
+  'Token Center &lt;noreply@example.com&gt;',
   'NewAPI',
   'OAuth Client Secret',
   'OhMyGPT',
@@ -79,7 +76,6 @@ const BRAND_AND_LITERAL_KEYS = new Set([
   'Pancake',
   'Passkey',
   'Perplexity',
-  'QuantumNous',
   'Quota:',
   'Replicate',
   'SiliconFlow',

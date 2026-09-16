@@ -1,5 +1,4 @@
 /*
-Copyright (C) 2023-2026 QuantumNous
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -14,7 +13,6 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-For commercial licensing, please contact support@quantumnous.com
 */
 // Static translation keys that don't get picked up by the t('...') regex.
 // These cover dynamic labels (e.g. constants, configs) that are passed into t at runtime.
@@ -81,7 +79,7 @@ export const STATIC_I18N_KEYS = [
   'Access hosted model predictions through Replicate',
   'Access Codex using ChatGPT subscription credentials',
   'Configure endpoint routing, authentication and protocol conversion for different upstream services',
-  "New API's flexible channel lets you configure upstream addresses and authentication per endpoint, choose native forwarding or supported protocol conversions, and configure model listing and balance queries independently",
+  "Token Center's flexible channel lets you configure upstream addresses and authentication per endpoint, choose native forwarding or supported protocol conversions, and configure model listing and balance queries independently",
   'Flexible integration',
   'Connect to model services through a Sub2API gateway',
   'Connect to New API model services with support for multiple task plugins',
