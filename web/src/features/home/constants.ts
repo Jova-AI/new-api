@@ -18,7 +18,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
  * Home page constants
  * All hardcoded data for home page sections
  */
-import { type TFunction } from 'i18next'
+import type { TFunction } from 'i18next'
 
 // Layout - Main base classes
 export const MAIN_BASE_CLASSES = 'bg-background text-foreground w-full'
@@ -35,7 +35,6 @@ export const AI_APPLICATIONS = [
 export const AI_MODELS = [
   'Qwen.Color',
   'DeepSeek.Color',
-  'Doubao.Color',
   'OpenAI',
   'Claude.Color',
   'Gemini.Color',
@@ -117,11 +116,6 @@ export const DEFAULT_FEATURES = [
     title: 'Team Collaboration',
     description: 'Multi-user management with flexible permission allocation',
     iconName: 'Users',
-  },
-  {
-    title: 'Open Source',
-    description: 'Community driven, self-hosted, and extensible',
-    iconName: 'HeartHandshake',
   },
 ] as const
 

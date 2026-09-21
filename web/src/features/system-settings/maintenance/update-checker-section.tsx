@@ -14,26 +14,34 @@ You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 */
+import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 
 import { SystemUpdateAction } from '@/features/system-update/system-update-action'
 import { useStatus } from '@/hooks/use-status'
 import { formatTimestamp } from '@/lib/format'
 
+import { getSystemVersion } from '../api'
 import { SettingsSection } from '../components/settings-section'
 
-type UpdateCheckerSectionProps = {
-  currentVersion?: string | null
-  startTime?: number | null
-}
-
-export function UpdateCheckerSection(props: UpdateCheckerSectionProps) {
+export function UpdateCheckerSection(
+  props: { currentVersion?: string | null; startTime?: number | null } = {}
+) {
+  const { data: systemVersion } = useQuery({
+    queryKey: ['system-maintenance-version'],
+    queryFn: getSystemVersion,
+    gcTime: 0,
+    enabled: props.currentVersion == null,
+  })
   const { t } = useTranslation()
   const { status } = useStatus()
-  const uptime = props.startTime
-    ? formatTimestamp(props.startTime)
-    : t('Unknown')
-  const version = status?.version || props.currentVersion || t('Unknown')
+  const startTime = systemVersion?.start_time ?? props.startTime
+  const uptime = startTime ? formatTimestamp(startTime) : t('Unknown')
+  const version =
+    systemVersion?.version ||
+    props.currentVersion ||
+    status?.version ||
+    t('Unknown')
 
   return (
     <SettingsSection title={t('System maintenance')}>

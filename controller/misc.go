@@ -38,6 +38,17 @@ func TestStatus(c *gin.Context) {
 	return
 }
 
+// GetSystemVersion is exposed only through the root-authenticated system-info routes.
+func GetSystemVersion(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"success": true,
+		"data": gin.H{
+			"version":    common.Version,
+			"start_time": common.StartTime,
+		},
+	})
+}
+
 func GetStatus(c *gin.Context) {
 
 	cs := console_setting.GetConsoleSetting()
@@ -48,7 +59,6 @@ func GetStatus(c *gin.Context) {
 	legalSetting := system_setting.GetLegalSettings()
 
 	data := gin.H{
-		"version":                     common.Version,
 		"start_time":                  common.StartTime,
 		"email_verification":          common.EmailVerificationEnabled,
 		"github_oauth":                common.GitHubOAuthEnabled,

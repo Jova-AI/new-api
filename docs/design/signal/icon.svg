@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Token Center</title>
+  <desc id="desc">朱红色切角方形中，白色 T 形通路与中心节点象征统一模型网关。</desc>
+  <path d="M14 4h36l10 10v36L50 60H14L4 50V14L14 4Z" fill="#ff6b62"/>
+  <path d="M18 20h28M32 20v25" stroke="#261112" stroke-width="7" stroke-linecap="square"/>
+  <path d="M17 34v12h10M47 34v12H37" stroke="#fff3ef" stroke-width="4"/>
+  <rect x="27" y="27" width="10" height="10" rx="2" fill="#fff3ef"/>
+</svg>

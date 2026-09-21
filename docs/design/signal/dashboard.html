@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>控制台设计稿 · Token Center</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="dashboard">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"
+        ><img src="icon.svg" alt="" /><b>Token Center<span>AI GATEWAY</span></b></a
+      >
+      <div class="workspace">
+        <span class="workspace-icon">A</span>
+        <div>Akira 的工作空间<small>个人账户</small></div>
+        <span>⌄</span>
+      </div>
+      <nav aria-label="控制台导航（静态示意）">
+        <div class="nav-label">工作空间</div>
+        <span class="nav-item selected"><span>◈</span>总览<i></i></span
+        ><span class="nav-item"><span>▥</span>数据分析</span
+        ><span class="nav-item"><span>⚿</span>API 密钥</span
+        ><span class="nav-item"><span>≡</span>使用日志</span
+        ><span class="nav-item"><span>▷</span>模型测试</span>
+        <div class="nav-label">资产管理</div>
+        <span class="nav-item"><span>▣</span>钱包</span
+        ><span class="nav-item"><span>☷</span>任务日志</span>
+        <div class="nav-label">管理</div>
+        <span class="nav-item"><span>⌘</span>渠道</span
+        ><span class="nav-item"><span>◇</span>模型</span
+        ><span class="nav-item"><span>♙</span>用户</span
+        ><span class="nav-item"><span>⚙</span>系统设置</span>
+      </nav>
+      <div class="sidebar-bottom">
+        <span class="avatar">A</span>
+        <div>Akira<small>管理员</small></div>
+        <span>↗</span>
+      </div>
+    </aside>
+    <div class="dashboard-body">
+      <header class="topbar">
+        <span>工作空间 <b>/</b> 总览</span>
+        <div>
+          <span class="demo">概念预览 · 示例数据</span><a href="index.html">返回首页 ↗</a
+          ><span class="avatar">A</span>
+        </div>
+      </header>
+      <main class="dashboard-main">
+        <div class="dashboard-title">
+          <div>
+            <span class="eyebrow mono">WORKSPACE / OVERVIEW</span>
+            <h1>一切动向，尽在掌握<span>。</span></h1>
+            <p>下午好，Akira。开始你的下一次创造。</p>
+          </div>
+          <span class="button primary static">＋ 创建 API 密钥</span>
+        </div>
+        <div class="toolbar">
+          <div><strong>工作空间总览</strong><span>模型分析</span><span>流量分析</span></div>
+          <span class="date mono">2026.09.16 <b> / </b> 今天 ⌄</span>
+        </div>
+        <section class="metrics" aria-label="示例用量指标">
+          <article class="metric">
+            <div>今日请求<span>↗</span></div>
+            <strong>24,892<small>次</small></strong>
+            <p>↑ 18.6% 较昨日</p>
+          </article>
+          <article class="metric">
+            <div>消耗 Tokens<span>↗</span></div>
+            <strong>8.42<small>M</small></strong>
+            <p>↑ 12.3% 较昨日</p>
+          </article>
+          <article class="metric">
+            <div>今日费用<span>↗</span></div>
+            <strong>$ 18.64<small></small></strong>
+            <p>↓ 6.2% 较昨日</p>
+          </article>
+          <article class="metric">
+            <div>可用余额<span>↗</span></div>
+            <strong>$ 1,280<small>.00</small></strong>
+            <p>账户可用额度</p>
+          </article>
+        </section>
+        <div class="analytics">
+          <section class="panel">
+            <div class="panel-heading">
+              <h2>调用趋势</h2>
+              <span><i class="dot"></i> 请求量 <b class="subtle"> / 24 小时</b></span>
+            </div>
+            <div class="chart-total">24,892 <small>次请求</small><span>↑ 18.6%</span></div>
+            <svg
+              class="chart"
+              viewBox="0 0 720 226"
+              role="img"
+              aria-label="示例调用趋势：请求量随时间波动，下午达到峰值"
+            >
+              <defs>
+                <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+                  <stop stop-color="#ff6b62" stop-opacity=".25" />
+                  <stop offset="1" stop-color="#ff6b62" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <path d="M42 25H706" stroke="#352e2f" stroke-dasharray="3 5" />
+              <text x="0" y="29" fill="#a69fa0" font-size="10">1.5k</text>
+              <path d="M42 75H706" stroke="#352e2f" stroke-dasharray="3 5" />
+              <text x="0" y="79" fill="#a69fa0" font-size="10">1.0k</text>
+              <path d="M42 125H706" stroke="#352e2f" stroke-dasharray="3 5" />
+              <text x="0" y="129" fill="#a69fa0" font-size="10">0.5k</text>
+              <path d="M42 175H706" stroke="#352e2f" stroke-dasharray="3 5" />
+              <text x="0" y="179" fill="#a69fa0" font-size="10">0</text>
+              <polygon
+                points="42,175 42,162 68,159 94,166 120,147 146,151 172,123 198,137 224,113 250,124 276,91 302,105 328,73 354,95 380,83 406,39 432,58 458,30 484,71 510,50 536,89 562,66 588,107 614,87 640,114 666,96 704,106 704,175"
+                fill="url(#area)"
+              />
+              <polyline
+                points="42,162 68,159 94,166 120,147 146,151 172,123 198,137 224,113 250,124 276,91 302,105 328,73 354,95 380,83 406,39 432,58 458,30 484,71 510,50 536,89 562,66 588,107 614,87 640,114 666,96 704,106"
+                fill="none"
+                stroke="#ff6b62"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+              />
+              <text x="42" y="214" fill="#a69fa0" font-size="10">00:00</text>
+              <text x="202" y="214" fill="#a69fa0" font-size="10">06:00</text>
+              <text x="367" y="214" fill="#a69fa0" font-size="10">12:00</text>
+              <text x="530" y="214" fill="#a69fa0" font-size="10">18:00</text>
+              <text x="674" y="214" fill="#a69fa0" font-size="10">23:59</text>
+            </svg>
+          </section>
+          <section class="panel distribution">
+            <div class="panel-heading">
+              <h2>模型分布</h2>
+              <span>↗</span>
+            </div>
+            <p class="subtle">按请求数量 · 今天</p>
+            <div class="model-visual">
+              <div class="donut">
+                <div><b>4</b><small>活跃模型</small></div>
+              </div>
+              <div>
+                <span class="eyebrow">最常使用</span>
+                <h3>DeepSeek<br />V3</h3>
+                <span class="accent mono">42.8%</span>
+              </div>
+            </div>
+            <div class="model">
+              <span><i style="background: #ff6b62"></i>DeepSeek V3</span><b class="mono">42.8%</b>
+            </div>
+            <div class="model">
+              <span><i style="background: #e59a88"></i>通义千问 Qwen3</span
+              ><b class="mono">31.2%</b>
+            </div>
+            <div class="model">
+              <span><i style="background: #bfa5c6"></i>智谱 GLM-4.5</span><b class="mono">18.4%</b>
+            </div>
+            <div class="model">
+              <span><i style="background: #857779"></i>豆包 Doubao</span><b class="mono">7.6%</b>
+            </div>
+          </section>
+        </div>
+        <section class="panel recent">
+          <div class="panel-heading">
+            <h2>最近调用 <small>RECENT ACTIVITY</small></h2>
+            <span class="subtle">全部日志 ↗</span>
+          </div>
+          <div
+            class="table-scroll"
+            tabindex="0"
+            role="region"
+            aria-label="最近调用示例，可横向滚动"
+          >
+            <table>
+              <thead>
+                <tr>
+                  <th>时间</th>
+                  <th>模型</th>
+                  <th>API 密钥</th>
+                  <th>Tokens</th>
+                  <th>费用</th>
+                  <th>状态</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>14:32:08</td>
+                  <td>deepseek-chat</td>
+                  <td>production-app</td>
+                  <td>2,486</td>
+                  <td>$ 0.042</td>
+                  <td><span class="success">● 成功</span></td>
+                </tr>
+                <tr>
+                  <td>14:31:56</td>
+                  <td>qwen3-235b-a22b</td>
+                  <td>web-assistant</td>
+                  <td>1,204</td>
+                  <td>$ 0.018</td>
+                  <td><span class="success">● 成功</span></td>
+                </tr>
+                <tr>
+                  <td>14:31:42</td>
+                  <td>glm-4.5</td>
+                  <td>production-app</td>
+                  <td>3,812</td>
+                  <td>$ 0.036</td>
+                  <td><span class="success">● 成功</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <div class="workspace-note">
+          <span><i class="dot"></i> 每一次连接，都有无限可能。</span
+          ><span class="mono">TOKEN CENTER / SIGNAL</span>
+        </div>
+      </main>
+      <footer>
+        <span>© 2026 Token Center</span><span>SIGNAL / 设计概念 · 示例数据</span
+        ><a href="https://github.com/QuantumNous/new-api">基于 New API ↗</a>
+      </footer>
+    </div>
+  </body>
+</html>

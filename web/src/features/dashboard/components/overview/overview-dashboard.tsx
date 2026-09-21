@@ -67,18 +67,19 @@ import { FAQPanel } from './faq-panel'
 import { PerformanceHealthPanel } from './performance-health-panel'
 import { SummaryCards } from './summary-cards'
 import { UptimePanel } from './uptime-panel'
+import { UsageOverview } from './usage-overview'
 
 const SETUP_GUIDE_VISIBILITY_STORAGE_KEY =
   'dashboard_overview_setup_guide_expanded'
 
 const SETUP_GUIDE_CODE_PATTERN = [
-  'const request = await client.responses.create({',
-  "  model: 'gpt-4.1-mini',",
-  "  input: 'Start routing traffic',",
+  'const request = await client.chat.completions.create({',
+  "  model: 'deepseek-chat',",
+  "  messages: [{ role: 'user', content: 'Hello' }],",
   '})',
   '',
-  'if (request.output_text) {',
-  '  console.log(request.output_text)',
+  'if (request.choices[0]?.message.content) {',
+  '  console.log(request.choices[0]?.message.content)',
   '}',
 ].join('\n')
 
@@ -591,7 +592,7 @@ export function OverviewDashboard() {
 
   const requestExample = useMemo<RequestExample>(() => {
     const endpoint = normalizeEndpoint(apiInfoItems[0]?.url)
-    const model = modelsQuery.data?.[0] ?? 'gpt-4o-mini'
+    const model = modelsQuery.data?.[0] ?? 'deepseek-chat'
     const keyName = preferredKey?.name ?? t('No API key yet')
     const ready = Boolean(preferredKey?.id && model)
 
@@ -644,7 +645,8 @@ export function OverviewDashboard() {
         )}
       </SectionPageLayout.Actions>
       <SectionPageLayout.Content>
-        <div className='flex flex-col gap-4'>
+        <div className='flex flex-col gap-6'>
+          <UsageOverview />
           <div id={setupGuideId} hidden={!setupGuideExpanded}>
             {setupGuideExpanded && (
               <CardStaggerContainer className='grid items-stretch gap-4 xl:grid-cols-[minmax(0,1fr)_22rem]'>
@@ -785,7 +787,14 @@ export function OverviewDashboard() {
             </CardStaggerContainer>
           )}
 
-          <SummaryCards />
+          <details className='rounded-lg border p-4'>
+            <summary className='cursor-pointer text-sm font-medium'>
+              {t('Account details')}
+            </summary>
+            <div className='mt-4'>
+              <SummaryCards />
+            </div>
+          </details>
 
           {showContentPanels && (
             <CardStaggerContainer

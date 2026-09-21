@@ -25,6 +25,7 @@ import type { TFunction } from 'i18next'
 import { useEffect, useSyncExternalStore } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import { getSystemVersion } from '@/features/system-settings/api'
 import { useStatus } from '@/hooks/use-status'
 import { handleServerError } from '@/lib/handle-server-error'
 import { ROLE } from '@/lib/roles'
@@ -146,7 +147,13 @@ export function useSystemUpdate() {
     }
   }, [isAdmin, queryClient])
 
-  const version = status?.version?.trim()
+  const { data: systemVersion } = useQuery({
+    queryKey: ['system-maintenance-version'],
+    queryFn: getSystemVersion,
+    gcTime: 0,
+    enabled: (user?.role ?? 0) >= ROLE.SUPER_ADMIN && !status?.version,
+  })
+  const version = (systemVersion?.version ?? status?.version)?.trim()
   const currentVersion =
     version === 'v0.0.0' || version === '0.0.0'
       ? undefined

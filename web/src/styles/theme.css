@@ -93,28 +93,30 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 }
 
 :root {
-  --radius: 1rem;
-  --app-header-height: 3rem;
+  --radius: 0.5rem;
+  --app-header-height: 4rem;
   /* Static build-channel fallback consumed when JS hasn't booted yet. */
   --app-rev: '2k6e8r7p';
-  /* Auto starts with the browser font, including before JS applies the
-   * saved preference. Explicit Sans selects Public Sans in theme-presets.css. */
+  /* Currently active body font. The font axis swaps this between
+   * `--font-sans` and `--font-serif` via `[data-theme-font='...']` blocks
+   * in theme-presets.css. Default mirrors `--font-sans` so behavior is
+   * identical when no font preference is set. */
   --font-ui-sans: sans-serif;
   --font-body: var(--font-ui-sans);
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.692 0.141 243.716);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.95 0 0);
-  --secondary-foreground: oklch(0.42 0.16 250);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.49 0 0);
-  --accent: color-mix(in oklch, var(--primary) 12%, var(--background));
-  --accent-foreground: oklch(0.145 0 0);
+  --background: #fbf7f6;
+  --foreground: #291c1f;
+  --card: #ffffff;
+  --card-foreground: #291c1f;
+  --popover: #ffffff;
+  --popover-foreground: #291c1f;
+  --primary: #b82f2c;
+  --primary-foreground: #ffffff;
+  --secondary: #f2e8e6;
+  --secondary-foreground: #583a3d;
+  --muted: #f2e8e6;
+  --muted-foreground: #756266;
+  --accent: #f7e1dd;
+  --accent-foreground: #81211f;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
   --success: oklch(0.596 0.145 163.225);
@@ -125,25 +127,25 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
   --info-foreground: oklch(0.985 0 0);
   --neutral: oklch(0.708 0 0);
   --neutral-foreground: oklch(0.145 0 0);
-  --border: oklch(0.93 0 0);
-  --input: oklch(0.93 0 0);
-  --ring: oklch(0.708 0.16 249.003);
-  --chart-1: oklch(0.72 0.18 250);
-  --chart-2: oklch(0.65 0.15 200);
-  --chart-3: oklch(0.7 0.12 280);
-  --chart-4: oklch(0.68 0.19 325);
-  --chart-5: oklch(0.68 0.16 155);
-  --overview-accent-1: oklch(0.72 0.18 250);
-  --overview-accent-2: oklch(0.65 0.15 200);
-  --overview-accent-3: oklch(0.7 0.12 280);
-  --sidebar: color-mix(in oklch, var(--foreground) 0.5%, var(--background));
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.64 0.197 253.892);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: color-mix(in oklch, var(--primary) 12%, var(--background));
-  --sidebar-accent-foreground: oklch(0.579 0.196 255.909);
-  --sidebar-border: oklch(0.93 0 0);
-  --sidebar-ring: oklch(0.58 0.2 250);
+  --border: #e4d6d4;
+  --input: #d7c3c0;
+  --ring: #b82f2c;
+  --chart-1: #b82f2c;
+  --chart-2: #b46955;
+  --chart-3: #88618e;
+  --chart-4: #78646a;
+  --chart-5: #477660;
+  --overview-accent-1: #b82f2c;
+  --overview-accent-2: #b46955;
+  --overview-accent-3: #88618e;
+  --sidebar: #f5eeec;
+  --sidebar-foreground: #291c1f;
+  --sidebar-primary: #b82f2c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #b82f2c;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e4d6d4;
+  --sidebar-ring: #b82f2c;
   --skeleton-base: oklch(0.97 0 0);
   --skeleton-highlight: oklch(0.985 0 0);
   --table-row: var(--background);
@@ -177,24 +179,25 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 }
 
 .dark {
-  /* Native controls follow the theme; Dark Reader also reads this to detect
-     the built-in dark theme. */
   color-scheme: dark;
-  /* OpenAI-like dark mode with a crisp charcoal canvas. */
-  --background: oklch(0.235 0 0);
-  --foreground: oklch(0.965 0 0);
-  --card: oklch(0.285 0 0);
-  --card-foreground: oklch(0.965 0 0);
-  --popover: oklch(0.305 0 0);
-  --popover-foreground: oklch(0.965 0 0);
-  --primary: oklch(0.54 0.142 248.516);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.335 0 0);
-  --secondary-foreground: oklch(0.9 0.05 250);
-  --muted: oklch(0.305 0 0);
-  --muted-foreground: oklch(0.78 0 0);
-  --accent: color-mix(in oklch, var(--primary) 20%, var(--background));
-  --accent-foreground: oklch(0.985 0 0);
+  --overview-accent-3: #bfa5c6;
+  --overview-accent-2: #e59a88;
+  --overview-accent-1: #ff6b62;
+  /* Signal: warm charcoal surfaces and coral-red accents. */
+  --background: #191516;
+  --foreground: #f5efed;
+  --card: #231d1e;
+  --card-foreground: #f5efed;
+  --popover: #2b2325;
+  --popover-foreground: #f5efed;
+  --primary: #ff6b62;
+  --primary-foreground: #261112;
+  --secondary: #33282b;
+  --secondary-foreground: #f5efed;
+  --muted: #2b2325;
+  --muted-foreground: #bcaeae;
+  --accent: #3c2829;
+  --accent-foreground: #f5efed;
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
   --success: oklch(0.696 0.17 162.48);
@@ -205,24 +208,24 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
   --info-foreground: oklch(0.145 0 0);
   --neutral: oklch(0.76 0 0);
   --neutral-foreground: oklch(0.155 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 17%);
-  --ring: oklch(0.554 0.148 250.726);
-  --chart-1: oklch(0.76 0.14 250);
-  --chart-2: oklch(0.76 0.13 200);
-  --chart-3: oklch(0.76 0.13 285);
-  --chart-4: oklch(0.75 0.16 325);
-  --chart-5: oklch(0.76 0.14 155);
-  --sidebar: oklch(0.225 0 0);
-  --sidebar-foreground: oklch(0.95 0 0);
-  --sidebar-primary: oklch(0.588 0.123 246.488);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: color-mix(in oklch, var(--primary) 20%, var(--background));
-  --sidebar-accent-foreground: oklch(0.9 0.05 250);
-  --sidebar-border: oklch(1 0 0 / 11%);
-  --sidebar-ring: oklch(0.7 0.17 250);
-  --skeleton-base: oklch(0.335 0 0);
-  --skeleton-highlight: oklch(0.44 0 0);
+  --border: #443537;
+  --input: #594448;
+  --ring: #ff6b62;
+  --chart-1: #ff6b62;
+  --chart-2: #e59a88;
+  --chart-3: #bfa5c6;
+  --chart-4: #ad969e;
+  --chart-5: #8ed4b3;
+  --sidebar: #141112;
+  --sidebar-foreground: #ddd1d0;
+  --sidebar-primary: #ff6b62;
+  --sidebar-primary-foreground: #261112;
+  --sidebar-accent: #ff6b62;
+  --sidebar-accent-foreground: #261112;
+  --sidebar-border: #443537;
+  --sidebar-ring: #ff6b62;
+  --skeleton-base: #33282b;
+  --skeleton-highlight: #443537;
   --table-row: var(--background);
   --table-header: color-mix(in oklch, var(--foreground) 6%, var(--background));
   --table-header-hover: color-mix(

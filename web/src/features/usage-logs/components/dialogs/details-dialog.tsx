@@ -565,10 +565,6 @@ export function DetailsDialog(props: DetailsDialogProps) {
             label: t('Node Name'),
             value: adminInfo.node_name,
           },
-          adminInfo.version && {
-            label: t('System Version'),
-            value: adminInfo.version,
-          },
         ].filter(Boolean) as Array<{ label: string; value: string }>)
       : []
   const showLegacyTopupWarning = isTopup && props.isAdmin && !adminInfo

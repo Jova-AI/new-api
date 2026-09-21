@@ -59,7 +59,9 @@ export async function updatePasskeyDomains(
 export async function confirmPaymentCompliance() {
   const res = await api.post<ConfirmPaymentComplianceResponse>(
     '/api/option/payment_compliance',
-    { confirmed: true }
+    {
+      confirmed: true,
+    }
   )
   return res.data
 }
@@ -122,4 +124,16 @@ export async function fetchUpstreamRatios(request: FetchUpstreamRatiosRequest) {
     request
   )
   return res.data
+}
+
+export async function getSystemVersion() {
+  const res = await api.get<{
+    success: boolean
+    message?: string
+    data?: { version: string; start_time: number }
+  }>('/api/system-info/version')
+  if (!res.data.success || !res.data.data) {
+    throw new Error(res.data.message || 'Failed to load system version')
+  }
+  return res.data.data
 }
